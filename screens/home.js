@@ -51,7 +51,7 @@ export default function Home({ navigation }) {
   console.log(ntDate)
   ntDate = new Date(ntDate)
   let ntDat = ntDate.getSeconds()
-  const [timerCount, setTimer] = useState(ntDat - (new Date().getSeconds()))
+  const [timerCount, setTimer] = useState(60 - (new Date().getSeconds()))
 
   const askForCameraPermission = () => {
     (async () => {
