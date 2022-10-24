@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Text, View, StyleSheet, Button,TextInput,
+  SafeAreaView,
+  StatusBar,
+  FlatList,
+  TouchableOpacity, 
+  Platform} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import { BarCodeScanner } from 'expo-barcode-scanner';
+import Home from './screens/home';
+import { AppLoading } from 'expo';
+import Navigator from './routes/homeStack';
+const COLORS = {primary: '#1f145c', white: '#fff'};
 
 export default function App() {
+ 
+  // Return the main View
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Navigator />
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+
